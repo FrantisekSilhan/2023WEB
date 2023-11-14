@@ -20,7 +20,7 @@ namespace CookieMaker2023P3A.Pages
 
         public void OnGetSetName()
         {
-            TempData.AddMessage("messagetext", TempDataExtension.MessageType.success, Text);
+            TempData.AddMessage(_key, TempDataExtension.MessageType.success, Text);
         }
     }
 }
