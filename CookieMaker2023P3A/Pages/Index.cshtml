@@ -1,0 +1,24 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@{
+    if (Model.Name == null)
+    {
+        <p>Name nenastaveno</p>
+    } else
+    {
+        <p>@Model.Name</p>
+    }
+}
+
+<partial name="_ShowMessagesPartial" model="@Model.Key" />
+
+<p>Váš poslední přístup byl v <b>@Model.LastAccess</b></p>
