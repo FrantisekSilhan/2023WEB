@@ -5,6 +5,10 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookieMaker2023P3A", "CookieMaker2023P3A\CookieMaker2023P3A.csproj", "{46057F1C-0B6D-4186-8AC8-F19559D0B3B2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SessionServiceToDo", "SessionServiceToDo\SessionServiceToDo.csproj", "{487067DE-02C0-494D-80B8-ABBD7EE0F151}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "190923WEB", "190923WEB\190923WEB.csproj", "{64A9CE47-8E36-4FF6-A532-9FF2D94EB266}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{46057F1C-0B6D-4186-8AC8-F19559D0B3B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46057F1C-0B6D-4186-8AC8-F19559D0B3B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46057F1C-0B6D-4186-8AC8-F19559D0B3B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{487067DE-02C0-494D-80B8-ABBD7EE0F151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{487067DE-02C0-494D-80B8-ABBD7EE0F151}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{487067DE-02C0-494D-80B8-ABBD7EE0F151}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{487067DE-02C0-494D-80B8-ABBD7EE0F151}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64A9CE47-8E36-4FF6-A532-9FF2D94EB266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64A9CE47-8E36-4FF6-A532-9FF2D94EB266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64A9CE47-8E36-4FF6-A532-9FF2D94EB266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64A9CE47-8E36-4FF6-A532-9FF2D94EB266}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

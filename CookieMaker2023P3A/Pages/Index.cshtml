@@ -19,6 +19,11 @@
     }
 }
 
+<div>
+    <p>Poslední hod <b>@Model.LastRoll</b></p>
+    <a asp-page-handler="roll">roll</a>
+</div>
+
 <partial name="_ShowMessagesPartial" model="@Model.Key" />
 
 <p>Váš poslední přístup byl v <b>@Model.LastAccess</b></p>

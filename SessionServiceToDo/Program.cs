@@ -1,13 +1,21 @@
-using CookieMaker2023P3A.Services;
+using SessionServiceToDo.Models;
+using SessionServiceToDo.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddScoped<SessionService<List<ToDo>>>();
+builder.Services.AddScoped<ToDoService>();
+builder.Services.AddHttpContextAccessor();
 
-//builder.Services.AddSingleton<IDice, DiceService>();
-//builder.Services.AddScoped<>();
-builder.Services.AddTransient<IDice, DiceService>();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(10);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 
@@ -25,6 +33,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapRazorPages();
 

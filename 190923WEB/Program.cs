@@ -1,13 +1,7 @@
-using CookieMaker2023P3A.Services;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-
-//builder.Services.AddSingleton<IDice, DiceService>();
-//builder.Services.AddScoped<>();
-builder.Services.AddTransient<IDice, DiceService>();
 
 var app = builder.Build();
 
@@ -24,7 +18,16 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+
 app.UseAuthorization();
+
+/*app.UseEndpoints(endpoints =>
+{
+    endpoints.MapGet("/", async context =>
+    {
+        await context.Response.WriteAsync("test");
+    });
+});*/
 
 app.MapRazorPages();
 

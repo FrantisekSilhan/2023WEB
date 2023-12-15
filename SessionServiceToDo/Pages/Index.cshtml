@@ -1,0 +1,34 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="text-center">
+    <form method="get">
+        <div>
+            <input type="hidden" name="handler" value="add" />
+        </div>
+        <div>
+            <label asp-for="Name"></label>
+            <input asp-for="Name" /><input type="submit" /><br>
+            <span asp-validation-for="Name"></span>
+        </div>
+    </form>
+</div>
+
+@if (Model.ToDoList.Count() > 0)
+{
+    <p class="display-4">Seznam úkolů:</p>
+    <ul>
+        @foreach (var item in Model.ToDoList)
+        {
+            <li>(@item.Id) @item.Name</li>
+        }
+    </ul>
+}
