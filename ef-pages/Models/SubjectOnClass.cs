@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ef_pages.Models {
 	public class SubjectOnClass {
@@ -11,5 +12,8 @@ namespace ef_pages.Models {
 		[ForeignKey(nameof(SubjectId))]
 		public required Subject Subject { get; set; }
 		public int SubjectId { get; set; }
+
+		[Required]
+		public Guid TeacherId { get; set; }
 	}
 }

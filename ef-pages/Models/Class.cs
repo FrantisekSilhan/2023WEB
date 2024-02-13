@@ -6,5 +6,6 @@ namespace ef_pages.Models {
 		[Required]
 		public string Name { get; set; } = string.Empty;
 		public required ICollection<Student> Students { get; set; }
+		public required ICollection<SubjectOnClass> subjectOnClasses { get; set; }
 	}
 }
