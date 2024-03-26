@@ -1,0 +1,118 @@
+﻿@page
+@model Joomla.Pages.Admin.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>JUser</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JUser.FullName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JUser.FullName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JUser.BirthDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JUser.BirthDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JUser.UserName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JUser.UserName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JUser.NormalizedUserName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JUser.NormalizedUserName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JUser.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JUser.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JUser.NormalizedEmail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JUser.NormalizedEmail)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JUser.EmailConfirmed)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JUser.EmailConfirmed)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JUser.PasswordHash)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JUser.PasswordHash)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JUser.SecurityStamp)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JUser.SecurityStamp)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JUser.ConcurrencyStamp)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JUser.ConcurrencyStamp)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JUser.PhoneNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JUser.PhoneNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JUser.PhoneNumberConfirmed)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JUser.PhoneNumberConfirmed)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JUser.TwoFactorEnabled)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JUser.TwoFactorEnabled)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JUser.LockoutEnd)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JUser.LockoutEnd)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JUser.LockoutEnabled)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JUser.LockoutEnabled)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JUser.AccessFailedCount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JUser.AccessFailedCount)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="JUser.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

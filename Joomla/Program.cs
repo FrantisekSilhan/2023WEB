@@ -20,7 +20,12 @@ builder.Services.AddDefaultIdentity<JUser>(options => {
     options.Password.RequiredLength = 4; // Won't work
 })
     .AddEntityFrameworkStores<ApplicationDbContext>();
-builder.Services.AddRazorPages();
+
+builder.Services.AddRazorPages(options => {
+    options.Conventions.AuthorizePage("/Articles/Create");
+    options.Conventions.AuthorizeFolder("/Admin");
+    options.Conventions.AllowAnonymousToPage("/Admin/Index");
+});
 
 var app = builder.Build();
 
