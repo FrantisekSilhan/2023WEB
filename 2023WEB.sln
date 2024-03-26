@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SessionServiceToDo", "Sessi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "190923WEB", "190923WEB\190923WEB.csproj", "{64A9CE47-8E36-4FF6-A532-9FF2D94EB266}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ef-pages", "ef-pages\ef-pages.csproj", "{879856BD-2F80-46DA-AA7E-313C5325AFA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ef-pages", "ef-pages\ef-pages.csproj", "{879856BD-2F80-46DA-AA7E-313C5325AFA3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ef-pages-games-and-genres", "ef-pages-games-and-genres\ef-pages-games-and-genres.csproj", "{5594398D-1EF8-406D-8A59-4122218E2762}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joomla", "Joomla\Joomla.csproj", "{B4BCB6F0-0E13-4D30-9DFE-7FB7D74C5B5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{879856BD-2F80-46DA-AA7E-313C5325AFA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{879856BD-2F80-46DA-AA7E-313C5325AFA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{879856BD-2F80-46DA-AA7E-313C5325AFA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5594398D-1EF8-406D-8A59-4122218E2762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5594398D-1EF8-406D-8A59-4122218E2762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5594398D-1EF8-406D-8A59-4122218E2762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5594398D-1EF8-406D-8A59-4122218E2762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4BCB6F0-0E13-4D30-9DFE-7FB7D74C5B5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4BCB6F0-0E13-4D30-9DFE-7FB7D74C5B5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4BCB6F0-0E13-4D30-9DFE-7FB7D74C5B5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4BCB6F0-0E13-4D30-9DFE-7FB7D74C5B5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,7 +8,7 @@ namespace ef_pages.Models {
 		[Required]
 		[StringLength(50)]
 		public string TeacherName { get; set; } = string.Empty;
-		public required ICollection<SubjectOnClass> subjectOnClasses { get; set; }
+		public ICollection<SubjectOnClass>? subjectOnClasses { get; set; }
 
 		[ForeignKey(nameof(MentorId))]
 		public Teacher? Mentor { get; set; }

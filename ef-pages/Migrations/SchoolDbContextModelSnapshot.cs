@@ -17,19 +17,46 @@ namespace ef_pages.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.1");
 
+            modelBuilder.Entity("ClassSubject", b =>
+                {
+                    b.Property<int>("Classes2ClassId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Subjects2SubjectId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Classes2ClassId", "Subjects2SubjectId");
+
+                    b.HasIndex("Subjects2SubjectId");
+
+                    b.ToTable("ClassSubject");
+                });
+
             modelBuilder.Entity("ef_pages.Models.Class", b =>
                 {
                     b.Property<int>("ClassId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("ClassName")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("ClassId");
 
                     b.ToTable("Classes");
+
+                    b.HasData(
+                        new
+                        {
+                            ClassId = 1,
+                            ClassName = "P3A"
+                        },
+                        new
+                        {
+                            ClassId = 2,
+                            ClassName = "P4"
+                        });
                 });
 
             modelBuilder.Entity("ef_pages.Models.Student", b =>
@@ -53,6 +80,26 @@ namespace ef_pages.Migrations
                     b.HasIndex("ClassId");
 
                     b.ToTable("students");
+
+                    b.HasData(
+                        new
+                        {
+                            StudentId = new Guid("1b2db1ab-dffb-4c69-a96e-49ef3132c847"),
+                            ClassId = 1,
+                            StudentName = "Franta Vomáčka"
+                        },
+                        new
+                        {
+                            StudentId = new Guid("4de0ce36-7fc4-4e67-b12e-173bcf47f262"),
+                            ClassId = 1,
+                            StudentName = "Alice"
+                        },
+                        new
+                        {
+                            StudentId = new Guid("adf2d6e0-e958-416b-9f5f-4722ee4c3954"),
+                            ClassId = 2,
+                            StudentName = "Bob"
+                        });
                 });
 
             modelBuilder.Entity("ef_pages.Models.Subject", b =>
@@ -73,6 +120,32 @@ namespace ef_pages.Migrations
                     b.HasKey("SubjectId");
 
                     b.ToTable("subjects");
+
+                    b.HasData(
+                        new
+                        {
+                            SubjectId = 1,
+                            SubjectName = "Matematika",
+                            SubjectShortName = "MAT"
+                        },
+                        new
+                        {
+                            SubjectId = 2,
+                            SubjectName = "Angličtina",
+                            SubjectShortName = "ANJ"
+                        },
+                        new
+                        {
+                            SubjectId = 3,
+                            SubjectName = "Webové aplikace",
+                            SubjectShortName = "WEB"
+                        },
+                        new
+                        {
+                            SubjectId = 4,
+                            SubjectName = "Programování",
+                            SubjectShortName = "PRG"
+                        });
                 });
 
             modelBuilder.Entity("ef_pages.Models.SubjectOnClass", b =>
@@ -120,6 +193,38 @@ namespace ef_pages.Migrations
                     b.HasIndex("MentorId");
 
                     b.ToTable("Teachers");
+
+                    b.HasData(
+                        new
+                        {
+                            TeacherId = new Guid("d41a5f46-1d95-44b8-8dc3-bc0d449329a2"),
+                            TeacherName = "Ozzy Matikář"
+                        },
+                        new
+                        {
+                            TeacherId = new Guid("9a96e698-196c-43f2-894e-f6a9bbd9f874"),
+                            TeacherName = "Jan Butanský"
+                        },
+                        new
+                        {
+                            TeacherId = new Guid("44f825b4-0b96-414d-84ea-9ecb6f1d16eb"),
+                            TeacherName = "Petr Mucha"
+                        });
+                });
+
+            modelBuilder.Entity("ClassSubject", b =>
+                {
+                    b.HasOne("ef_pages.Models.Class", null)
+                        .WithMany()
+                        .HasForeignKey("Classes2ClassId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ef_pages.Models.Subject", null)
+                        .WithMany()
+                        .HasForeignKey("Subjects2SubjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ef_pages.Models.Student", b =>

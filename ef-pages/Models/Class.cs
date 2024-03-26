@@ -4,8 +4,10 @@ namespace ef_pages.Models {
 	public class Class {
 		public int ClassId { get; set; }
 		[Required]
-		public string Name { get; set; } = string.Empty;
-		public required ICollection<Student> Students { get; set; }
-		public required ICollection<SubjectOnClass> subjectOnClasses { get; set; }
+		public string ClassName { get; set; } = string.Empty;
+		public ICollection<Student>? Students { get; set; }
+		public ICollection<SubjectOnClass>? subjectOnClasses { get; set; }
+
+		public ICollection<Subject>? Subjects2 { get; set; }
 	}
 }

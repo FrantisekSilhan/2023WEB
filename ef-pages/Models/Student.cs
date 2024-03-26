@@ -10,7 +10,7 @@ namespace ef_pages.Models {
 		public string? StudentEmail { get; set;}
 		[Required]
 		[ForeignKey(nameof(ClassId))]
-		public required Class Class { get; set; }
+		public Class? Class { get; set; }
 		public int ClassId { get; set; }
 	}
 }

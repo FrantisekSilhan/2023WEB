@@ -8,6 +8,8 @@ namespace ef_pages.Models {
 		public string SubjectShortName { get; set; } = string.Empty;
 		[Required]
 		public string SubjectName { get; set; } = string.Empty;
-		public required ICollection<SubjectOnClass> subjectOnClasses { get; set; }
+		public ICollection<SubjectOnClass>? subjectOnClasses { get; set; }
+
+		public ICollection<Class>? Classes2 { get; set; }
 	}
 }

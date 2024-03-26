@@ -6,11 +6,11 @@ namespace ef_pages.Models {
 		public int SubjectOnClassId { get; set; }
 
 		[ForeignKey(nameof(ClassId))]
-		public required Class Class { get; set; }
+		public Class? Class { get; set; }
 		public int ClassId { get; set; }
 
 		[ForeignKey(nameof(SubjectId))]
-		public required Subject Subject { get; set; }
+		public Subject? Subject { get; set; }
 		public int SubjectId { get; set; }
 
 		[Required]
