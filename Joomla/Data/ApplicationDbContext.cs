@@ -15,6 +15,34 @@ namespace Joomla.Data {
             builder.Entity<JUser>().ToTable("Users");
             builder.Entity<JUser>().Property(u => u.Id).ValueGeneratedOnAdd();
             builder.Entity<Article>().Property(a => a.CreatedAt).HasDefaultValue(DateTime.UtcNow);
+
+            PasswordHasher<JUser> hasher = new PasswordHasher<JUser>();
+
+            Guid adminRoleId = Guid.NewGuid();
+            Guid adminId = Guid.NewGuid();
+            builder.Entity<IdentityRole<Guid>>().HasData(new IdentityRole<Guid> {
+                Id = adminRoleId,
+                Name = "Admin",
+                NormalizedName = "ADMIN"
+            });
+
+            builder.Entity<JUser>().HasData(new JUser {
+                Id = adminId,
+                UserName = "admin",
+                NormalizedUserName = "ADMIN",
+                Email = "admin@localhost",
+                NormalizedEmail = "ADMIN@LOCALHOST",
+                EmailConfirmed = true,
+                PasswordHash = hasher.HashPassword(new JUser(), "admin"),
+                SecurityStamp = string.Empty,
+                FullName = "Administrator",
+                BirthDate = DateTime.Parse("2000-01-01")
+            });
+
+            builder.Entity<IdentityUserRole<Guid>>().HasData(new IdentityUserRole<Guid> {
+                RoleId = adminRoleId,
+                UserId = adminId
+            });
         }
     }
 }
