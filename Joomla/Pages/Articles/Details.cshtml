@@ -1,0 +1,23 @@
+﻿@page "/Article/{id}"
+@using Joomla.Models
+@model Joomla.Pages.Articles.DetailsModel
+@inject SignInManager<JUser> manager
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <a asp-page="/Articles/Index">Back to List</a>
+</div>
+
+<h1>@Model.Article.Title</h1>
+@if (manager.IsSignedIn(User)) {
+    <a asp-page="/Articles/Edit" asp-route-id="@Model.Article.Id">Edit</a>
+    <a asp-page="/Articles/Delete" asp-route-id="@Model.Article.Id">Delete</a>
+}
+<p>@Model.Article.Author.FullName @Model.Article.CreatedAt</p>
+
+<div>
+    @Html.Raw(Model.Article.Content)
+</div>

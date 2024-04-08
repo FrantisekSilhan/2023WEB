@@ -28,8 +28,8 @@ namespace Joomla.Data {
 
             builder.Entity<JUser>().HasData(new JUser {
                 Id = adminId,
-                UserName = "admin",
-                NormalizedUserName = "ADMIN",
+                UserName = "admin@localhost",
+                NormalizedUserName = "ADMIN@LOCALHOST",
                 Email = "admin@localhost",
                 NormalizedEmail = "ADMIN@LOCALHOST",
                 EmailConfirmed = true,

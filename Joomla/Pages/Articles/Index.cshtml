@@ -1,0 +1,31 @@
+﻿@page
+@using Joomla.Models
+@model Joomla.Pages.Articles.IndexModel
+@inject SignInManager<JUser> manager
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Articles</h1>
+
+@if (manager.IsSignedIn(User))
+{
+    <p>
+        <a asp-page="Create">Create New</a>
+    </p>
+}
+
+<ul>
+    @foreach (var item in Model.Article)
+    {
+        <li>
+            <a asp-page="/Articles/Details" asp-route-id="@item.Id">@item.Title</a> by @item.Author.FullName
+            @if (manager.IsSignedIn(User))
+            {
+                <a asp-page="/Articles/Edit" asp-route-id="@item.Id">Edit</a>
+                <a asp-page="/Articles/Delete" asp-route-id="@item.Id">Delete</a>
+            }
+        </li>
+    }
+</ul>
