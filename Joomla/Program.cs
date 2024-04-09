@@ -22,6 +22,12 @@ builder.Services.AddDefaultIdentity<JUser>(options => {
     .AddRoles<IdentityRole<Guid>>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
+builder.Services.AddAuthorization(options => {
+    options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
+    options.AddPolicy("PowderUser", policy => policy.RequireClaim("joomla_editor", "1"));
+    options.AddPolicy("Total", policy => policy.RequireAssertion(a => a.User.IsInRole("Admin") && a.User.HasClaim("joomla_editor", "1")));
+});
+
 builder.Services.AddRazorPages(options => {
     options.Conventions.AuthorizePage("/Articles/Create");
     options.Conventions.AuthorizeFolder("/Admin");
