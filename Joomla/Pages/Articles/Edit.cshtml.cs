@@ -79,7 +79,7 @@ namespace Joomla.Pages.Articles
                 }
             }
 
-            return RedirectToPage("/Articles/Index");
+            return RedirectToPage("/Articles/Details", new {id = id});
         }
 
         private bool ArticleExists(int id)
