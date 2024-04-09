@@ -19,6 +19,7 @@ builder.Services.AddDefaultIdentity<JUser>(options => {
     options.Password.RequireUppercase = false;
     options.Password.RequiredLength = 4; // Won't work
 })
+    .AddRoles<IdentityRole<Guid>>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddRazorPages(options => {
