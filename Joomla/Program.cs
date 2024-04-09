@@ -24,7 +24,7 @@ builder.Services.AddDefaultIdentity<JUser>(options => {
 builder.Services.AddRazorPages(options => {
     options.Conventions.AuthorizePage("/Articles/Create");
     options.Conventions.AuthorizeFolder("/Admin");
-    options.Conventions.AllowAnonymousToPage("/Admin/Index");
+    //options.Conventions.AllowAnonymousToPage("/Admin/Index");
 });
 
 var app = builder.Build();
